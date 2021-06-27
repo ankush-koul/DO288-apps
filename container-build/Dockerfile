@@ -4,7 +4,7 @@ FROM quay.io/redhattraining/httpd-parent
 #      io.openshift.tags="apache,httpd" \
 #      io.k8s.description="This is Apache http server" \
 #      io.k8s.display-name="Apache HTTP Server"
-EXPOSE 8080
+#EXPOSE 8080
 RUN sed -i 's/Listen 80/Listen 8080/g' etc/httpd/conf/httpd.conf
 RUN chgrp -R 0 /var/log/httpd /var/run/httpd   && chmod -R g=u /var/log/httpd  /var/run/httpd
 USER 1001
